@@ -1,0 +1,47 @@
+---
+sidebar_position: 4
+---
+
+# TabPanel
+
+![TabPanel](/img/components/tab-panel.png)
+
+## Usage
+
+```lua title="Client/Index.lua"
+local tabPanel = EGUI.TabPanel(10, 10, 100, 100)
+```
+
+## Constructor Parameters
+
+| **Type** | **Name** | **Default** |
+| :--- | :--- | :--- |
+| `number` | **`posX`** |  |
+| `number` | **`posY`** |  |
+| `number` | **`width`** |  |
+| `number` | **`height`** |  |
+| `table` | **`parent`** | `nil` |
+
+## Functions
+
+import BaseElementFunctions from '@site/docs/components/_base-element-functions.mdx';
+
+<details><summary>Inherited Element Functions</summary><BaseElementFunctions /></details>
+
+| **Returns** | **Name** | **Description** |
+| :--- | :--- | :--- |
+| `table` | [**`AddTab`**](tab-panel#addtab) | Adds new tab to tab panel |
+
+### AddTab
+
+Adds new tab to tab panel
+
+> Returns a `table`
+
+```lua
+tabPanel:AddTab("Tab")
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `string` | **`text`** |  | The title of the tab |

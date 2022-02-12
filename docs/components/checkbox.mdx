@@ -1,0 +1,121 @@
+---
+sidebar_position: 4
+---
+
+# Checkbox
+
+![Checkbox](/img/components/checkbox.png)
+
+## Usage
+
+```lua title="Client/Index.lua"
+local checkbox = EGUI.Checkbox(10, 10, 200, 30, "Checkbox Test")
+```
+
+## Constructor Parameters
+
+| **Type** | **Name** | **Default** |
+| :--- | :--- | :--- |
+| `number` | **`posX`** |  |
+| `number` | **`posY`** |  |
+| `number` | **`width`** |  |
+| `number` | **`height`** |  |
+| `string` | **`text`** |  |
+| `table` | **`parent`** | `nil` |
+
+## Functions
+
+import BaseElementFunctions from '@site/docs/components/_base-element-functions.mdx';
+import BaseInputFunctions from '@site/docs/components/_base-input-functions.mdx';
+
+<details><summary>Inherited Element Functions</summary><BaseElementFunctions /></details>
+<details><summary>Inherited Input Functions</summary><BaseInputFunctions /></details>
+
+| **Returns** | **Name** | **Description** |
+| :--- | :--- | :--- |
+| [`Checkbox`](checkbox) | [**`SetChecked`**](checkbox#setchecked) | Sets whether the checkbox is checked |
+| `boolean` | [**`IsChecked`**](checkbox#ischecked) | Gets whether the checkbox is checked |
+| [`Checkbox`](checkbox) | [**`SetText`**](checkbox#settext) | Sets the text of the checkbox |
+| `string` | [**`GetText`**](checkbox#gettext) | Gets the text of the checkbox |
+
+### SetChecked
+
+Sets the state of the checkbox
+
+> Returns the [`Checkbox`](checkbox) (self)
+
+```lua
+checkbox:SetChecked(false)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `boolean` | **`state`** |  | The new state |
+
+### IsChecked
+
+Gets whether the checkbox is checked
+
+> Returns a `boolean`
+
+```lua
+local checked = checkbox:IsChecked()
+```
+
+### SetText
+
+Sets the text of the checkbox
+
+> Returns the [`Checkbox`](checkbox) (self)
+
+```lua
+checkbox:SetText("Text")
+```
+
+### GetText
+
+Gets the text of the checkbox
+
+> Returns a string
+
+```lua
+local text = checkbox:GetText()
+```
+
+## Events
+
+| **Name** | **Description** |
+| :--- | :--- |
+| [**`Change`**](checkbox#change) | Triggered when the value of the checkbox changed |
+| [**`FocusIn`**](checkbox#focusin) | Triggered when the checkbox receives the focus |
+| [**`FocusOut`**](checkbox#focusout) | Triggered when the checkbox looses the focus |
+
+### Change
+
+Triggered when the value of the checkbox changed
+
+```lua
+checkbox:Subscribe("Change", function(checked)
+
+end)
+```
+
+### FocusIn
+
+Triggered when the checkbox receives the focus
+
+```lua
+checkbox:Subscribe("FocusIn", function()
+
+end)
+```
+
+### FocusOut
+
+Triggered when the checkbox looses the focus
+
+```lua
+checkbox:Subscribe("FocusOut", function()
+
+end)
+```

@@ -1,0 +1,150 @@
+---
+sidebar_position: 4
+---
+
+# TextArea
+
+![TextArea](/img/components/text-area.png)
+
+## Usage
+
+```lua title="Client/Index.lua"
+local textArea = EGUI.TextArea(10, 10, 100, 100)
+```
+
+## Constructor Parameters
+
+| **Type** | **Name** | **Default** |
+| :--- | :--- | :--- |
+| `number` | **`posX`** |  |
+| `number` | **`posY`** |  |
+| `number` | **`width`** |  |
+| `number` | **`height`** |  |
+| `table` | **`parent`** | `nil` |
+
+## Functions
+
+import BaseElementFunctions from '@site/docs/components/_base-element-functions.mdx';
+import BaseInputFunctions from '@site/docs/components/_base-input-functions.mdx';
+
+<details><summary>Inherited Element Functions</summary><BaseElementFunctions /></details>
+<details><summary>Inherited Input Functions</summary><BaseInputFunctions /></details>
+
+| **Returns** | **Name** | **Description** |
+| :--- | :--- | :--- |
+| [`TextArea`](text-area) | [**`SetValue`**](text-area#setvalue) | Sets value of the text area |
+| `string` | [**`GetValue`**](text-area#getvalue) | Gets value of the text area |
+| [`TextArea`](text-area) | [**`SetPlaceholder`**](text-area#setplaceholder) | Sets placeholder of the text area |
+| `string` | [**`GetPlaceholder`**](text-area#getplaceholder) | Gets placeholder of the text area |
+| [`TextArea`](text-area) | [**`SetMaxLength`**](text-area#setmaxlength) | Sets max length of the text area |
+| `number` | [**`GetMaxLength`**](text-area#getmaxlength) | Gets max length of the text area |
+
+### SetValue
+
+Sets the value of the text area
+
+> Returns the [`TextArea`](text-area) (self)
+
+```lua
+textArea:SetValue("Value")
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `string` | **`value`** |  | The new value |
+
+### GetValue
+
+Gets the value of the text area
+
+> Returns a `string` of the current value
+
+```lua
+local value = textArea:GetValue()
+```
+
+### SetPlaceholder
+
+Sets the placeholder of the text area
+
+> Returns the [`TextArea`](text-area) (self)
+
+```lua
+textArea:SetPlaceholder("Placeholder")
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `string` | **`placeholder`** |  | The new placeholder |
+
+### GetPlaceholder
+
+Gets the placeholder of the text area
+
+> Returns a `string`
+
+```lua
+local placeholder = textArea:GetPlaceholder()
+```
+
+### SetMaxLength
+
+Sets the max length of the text area value
+
+> Returns the [`TextArea`](text-area) (self)
+
+```lua
+textArea:SetMaxLength(30)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `number` | **`maxLength`** |  | The max length of the text area value |
+
+### GetMaxLength
+
+Gets the max length of the text area value
+
+> Returns a `number`
+
+```lua
+local maxLength = textArea:GetMaxLength()
+```
+
+## Events
+
+| **Name** | **Description** |
+| :--- | :--- |
+| [**`Change`**](text-area#change) | Triggered when the value of the text area changed |
+| [**`FocusIn`**](text-area#focusin) | Triggered when the text area receives the focus |
+| [**`FocusOut`**](text-area#focusout) | Triggered when the text area looses the focus |
+
+### Change
+
+Triggered when the value of the text area changed
+
+```lua
+textArea:Subscribe("Change", function(value)
+
+end)
+```
+
+### FocusIn
+
+Triggered when the text area receives the focus
+
+```lua
+textArea:Subscribe("FocusIn", function()
+
+end)
+```
+
+### FocusOut
+
+Triggered when the text area looses the focus
+
+```lua
+textArea:Subscribe("FocusOut", function()
+
+end)
+```

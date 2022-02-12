@@ -1,0 +1,130 @@
+---
+sidebar_position: 4
+---
+
+# Slider
+
+![Slider](/img/components/slider.png)
+
+## Usage
+
+```lua title="Client/Index.lua"
+local slider = EGUI.Slider(10, 10, 100, 100, 50, 1, 100)
+```
+
+## Constructor Parameters
+
+| **Type** | **Name** | **Default** |
+| :--- | :--- | :--- |
+| `number` | **`posX`** |  |
+| `number` | **`posY`** |  |
+| `number` | **`width`** |  |
+| `number` | **`height`** |  |
+| `number` | **`value`** |  |
+| `number` | **`min`** |  |
+| `number` | **`max`** |  |
+| `table` | **`parent`** | `nil` |
+
+## Functions
+
+import BaseElementFunctions from '@site/docs/components/_base-element-functions.mdx';
+import BaseInputFunctions from '@site/docs/components/_base-input-functions.mdx';
+
+<details><summary>Inherited Element Functions</summary><BaseElementFunctions /></details>
+<details><summary>Inherited Input Functions</summary><BaseInputFunctions /></details>
+
+| **Returns** | **Name** | **Description** |
+| :--- | :--- | :--- |
+| [`Slider`](slider) | [**`SetValue`**](slider#setvalue) | Sets value of the slider |
+| `number` | [**`GetValue`**](slider#getvalue) | Gets value of the slider |
+| [`Slider`](slider) | [**`SetMinValue`**](slider#setminvalue) | Sets min value of the slider |
+| `number` | [**`GetMinValue`**](slider#getminvalue) | Gets min value of the slider |
+| [`Slider`](slider) | [**`SetMaxValue`**](slider#setmaxvalue) | Sets max value of the slider |
+| `number` | [**`GetMaxValue`**](slider#getmaxvalue) | Gets max value of the slider |
+
+### SetValue
+
+Sets value of the slider
+
+> Returns the [`Slider`](slider) (self)
+
+```lua
+slider:SetValue(50)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `number` | **`value`** |  | The new value |
+
+### GetValue
+
+Gets value of the slider
+
+> Returns a `number`
+
+```lua
+local value = slider:GetValue()
+```
+
+### SetMinValue
+
+Sets min value of the slider
+
+> Returns the [`Slider`](slider) (self)
+
+```lua
+slider:SetMin(50)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `number` | **`min`** |  | The new min value |
+
+### GetMinValue
+
+Gets min value of the slider
+
+> Returns a `number`
+
+```lua
+local min = slider:GetMinValue()
+```
+
+### SetMaxValue
+
+Sets max value of the slider
+
+> Returns the [`Slider`](slider) (self)
+
+```lua
+slider:SetMaxValue(70)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `number` | **`max`** |  | The new max value |
+
+### GetMaxValue
+
+Gets max value of the slider
+
+> Returns a `number`
+
+```lua
+local max = slider:GetMaxValue()
+```
+
+## Events
+
+| **Name** | **Description** |
+| :--- | :--- |
+| [**`Change`**](slider#change) | Triggered when the value of the slider changed |
+### Change
+
+Triggered when the value of the slider changed
+
+```lua
+slider:Subscribe("Change", function(value)
+
+end)
+```

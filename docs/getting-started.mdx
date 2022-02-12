@@ -1,0 +1,30 @@
+---
+sidebar_position: 1
+slug: /
+---
+
+# Getting Started
+
+## Install library
+
+Download the library and place it into your `Packages` folder.
+
+## Example GUI
+
+To use the library you need to import it first with `Package.RequirePackage("egui")`. The whole library is client only.
+
+![Example GUI](/img/example-gui.png)
+
+```lua title="Client/Index.lua"
+Package.RequirePackage("egui")
+
+local window = EGUI.Window(10, 10, 170, 110, "Getting Started", true, true)
+local label = EGUI.Label(5, 5, 50, 30, "Hello", window)
+local input = EGUI.Input(60, 5, 100, 30, window):SetValue("World!")
+local sliderLabel = EGUI.Label(5, 40, 50, 30, "75", window)
+local slider = EGUI.Slider(60, 40, 100, 30, 75, 1, 100, window)
+
+slider:Subscribe("Change", function(value)
+    sliderLabel:SetText(tostring(value))
+end)
+```

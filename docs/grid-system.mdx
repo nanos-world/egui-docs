@@ -1,0 +1,172 @@
+---
+sidebar_position: 2
+---
+
+# Grid System
+
+The grid system allows easy creation of GUIs without playing around with pixel values. It supplies another constructor for all GUI components which accept the position and size in grind units. A grid unit is `30px` and between to grid units there is `10px` spacing.
+
+![Grid System Example](/img/grid-system-example.png)
+
+```lua
+local gridExample = EGUIGrid.Window(10, 10, 8, 4, "ATM", true, false)
+
+local balanceLabel = EGUIGrid.Label(1, 1, 3, 1, "Balance:", gridExample)
+local balanceInput = EGUIGrid.Label(4, 1, 4, 1, "$ 456,123", gridExample)
+
+local amountLabel = EGUIGrid.Label(1, 2, 3, 1, "Amount:", gridExample)
+local amountInput = EGUIGrid.Input(4, 2, 4, 1, gridExample):SetPlaceholder("Amount")
+
+local withdrawButton = EGUIGrid.Button(5, 3, 3, 1, "Withdraw", gridExample)
+```
+
+## Window
+
+```lua
+local window = EGUIGrid.Window(5, 5, 20, 20, "Window Test", true, true)
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| number | **`posX`** |  | X position in pixels |
+| number | **`posY`** |  | Y position in pixels |
+| number | **`width`** |  | Width in grid units |
+| number | **`height`** |  | Height in grid units |
+| string | **`title`** |  |  |
+| boolean | **`titlebarEnabled`** | `true` |  |
+| boolean | **`closeButtonEnabled`** | `true` |  |
+| table | **`parent`** | `nil` |  |
+
+## Button
+
+```lua
+local button = EGUIGrid.Button(1, 1, 3, 1, "Button Test")
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| number | **`posX`** |  | X position in grid units |
+| number | **`posY`** |  | Y position in grid units |
+| number | **`width`** |  | Width in grid units |
+| number | **`height`** |  | Height in grid units |
+| string | **`text`** |  |  |
+| table | **`parent`** | `nil` |  |
+
+## Input
+
+```lua
+local input = EGUIGrid.Input(1, 1, 3, 1)
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number` | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `table` | **`parent`** | `nil` |  |
+
+## Label
+
+```lua
+local label = EGUIGrid.Label(1, 1, 3, 1, "Label Test")
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `string` | **`text`** |  |  |
+| `table` | **`parent`** | `nil` |  |
+
+## Slider
+
+```lua
+local slider = EGUIGrid.Slider(1, 1, 3, 1, 75, 1, 100)
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `number`  | **`value`** |  |  |
+| `number`  | **`min`** |  |  |
+| `number`  | **`max`** |  |  |
+| `table` | **`parent`** | `nil` |  |
+
+## TextArea
+
+```lua
+local textArea = EGUIGrid.TextArea(1, 1, 3, 3)
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `table` | **`parent`** | `nil` |  |
+
+## Image
+
+```lua
+local image = EGUIGrid.Image(1, 1, 3, 1, "some image")
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `string`  | **`image`** |  |  |
+| `table` | **`parent`** | `nil` |  |
+
+## Checkbox
+
+```lua
+local checkbox = EGUIGrid.Checkbox(1, 1, 3, 1, "Checkbox Test")
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `string`  | **`text`** |  |  |
+| `table` | **`parent`** | `nil` |  |
+
+## TabPanel
+
+```lua
+local tabPanel = EGUIGrid.TabPanel(1, 1, 3, 3)
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `table` | **`parent`** | `nil` |  |
+
+## ProgressBar
+
+```lua
+local progressBar = EGUIGrid.ProgressBar(1, 1, 3, 3)
+```
+
+| **Type** | **Name** | **Default** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `number`  | **`posX`** |  | X position in grid units |
+| `number`  | **`posY`** |  | Y position in grid units |
+| `number`  | **`width`** |  | Width in grid units |
+| `number`  | **`height`** |  | Height in grid units |
+| `table` | **`parent`** | `nil` |  |
+
