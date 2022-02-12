@@ -1,0 +1,157 @@
+---
+sidebar_position: 4
+---
+
+# Window
+
+![Window](/img/components/window.png)
+
+## Usage
+
+```lua title="Client/Index.lua"
+local window = EGUI.Window(10, 10, 400, 400, "Window Test", true, true)
+```
+
+## Constructor Parameters
+
+| **Type** | **Name** | **Default** |
+| :--- | :--- | :--- |
+| number | **`posX`** |  |
+| number | **`posY`** |  |
+| number | **`width`** |  |
+| number | **`height`** |  |
+| string | **`title`** |  |
+| boolean | **`titlebarEnabled`** | `true` |
+| boolean | **`closeButtonEnabled`** | `true` |
+| table | **`parent`** | `nil` |
+
+## Functions
+
+import BaseElementFunctions from '@site/docs/components/_base-element-functions.mdx';
+
+<details><summary>Inherited Element Functions</summary><BaseElementFunctions /></details>
+
+| **Returns** | **Name** | **Description** |
+| :--- | :--- | :--- |
+| [`Window`](window) | [**`SetTitle`**](window#settitle) | Set the title of the window |
+| `string` | [**`GetTitle`**](window#gettitle) | Gets the title of the window |
+| [`Window`](window) | [**`SetTitelbarEnabled`**](window#settitelbarenabled) | Sets whether the titlebar is enabled |
+| `boolean` | [**`IsTitelbarEnabled`**](window#istitelbarenabled) | Gets whether the titlebar is enabled  |
+| [`Window`](window) | [**`SetCloseButtonEnabled`**](window#setclosebuttonenabled) | Sets whether the close button is enabled |
+| `boolean` | [**`IsCloseButtonEnabled`**](window#isclosebuttonenabled) | Gets whether the close button is enabled |
+| [`Window`](window) | [**`BringToFront`**](window#bringtofront) | Brings window to the front |
+
+### SetTitle
+
+Sets the title of the window
+
+> Returns the Window (self)
+
+```lua
+window:SetTitle("Title")
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `string` | **`title`** |  | Title of the window |
+
+### GetTitle
+ 
+Gets the title of the window
+
+```lua
+local title = window:GetTitle()
+```
+
+### SetTitelbarEnabled
+
+:::info
+The titelbar allows dragging of the window. The title bar requires an additional 30 pixels!
+:::
+
+Sets whether the titlebar is enabled
+
+> Returns the [`Window`](window) (self)
+
+```lua
+window:SetTitelbarEnabled(false)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `boolean` | **`enable`** |  | Title of the window |
+
+### IsTitelbarEnabled
+
+Gets whether the titlebar is enabled
+
+> Returns `boolean` whether its enabled
+
+```lua
+local enabled = window:IsTitelbarEnabled()
+```
+
+### SetCloseButtonEnabled
+
+:::info
+The close button can only be shown if the titelbar is enabled.
+:::
+
+Sets whether the close button is enabled
+
+> Returns the [`Window`](window) (self)
+
+```lua
+window:SetTitelbarEnabled(false)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `boolean` | **`enable`** |  | Title of the window |
+
+### IsCloseButtonEnabled
+
+Gets whether the close button is enabled
+
+> Returns `boolean` whether its enabled
+
+```lua
+local enabled = window:IsCloseButtonEnabled()
+```
+
+### BringToFront
+
+Brings window to the front
+
+> Returns the [`Window`](window) (self)
+
+```lua
+window:BringToFront()
+```
+
+## Events
+
+| **Name** | **Description** |
+| :--- | :--- |
+| [**`Move`**](window#move) | Triggered when the window is moved |
+| [**`CloseClick`**](window#closeclick) | Triggered when the close button is clicked |
+
+### Move
+
+Triggered when the window is moved
+
+```lua
+window:Subscribe("Move", function(posX, posY)
+
+end)
+```
+
+### CloseClick
+
+Triggered when the close button is clicked
+
+```lua
+window:Subscribe("CloseClick", function()
+
+end)
+```

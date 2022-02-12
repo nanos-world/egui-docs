@@ -1,0 +1,58 @@
+---
+sidebar_position: 4
+---
+
+# ProgressBar
+
+![ProgressBar](/img/components/progress-bar.png)
+
+## Usage
+
+```lua title="Client/Index.lua"
+local progressBar = EGUI.ProgressBar(10, 10, 100, 100)
+```
+
+## Constructor Parameters
+
+| **Type** | **Name** | **Default** |
+| :--- | :--- | :--- |
+| `number` | **`posX`** |  |
+| `number` | **`posY`** |  |
+| `number` | **`width`** |  |
+| `number` | **`height`** |  |
+| `table` | **`parent`** | `nil` |
+
+## Functions
+
+import BaseElementFunctions from '@site/docs/components/_base-element-functions.mdx';
+
+<details><summary>Inherited Element Functions</summary><BaseElementFunctions /></details>
+
+| **Returns** | **Name** | **Description** |
+| :--- | :--- | :--- |
+| [`ProgressBar`](progress-bar) | [**`SetValue`**](progress-bar#setvalue) | Sets value of the progress bar |
+| `number` | [**`GetValue`**](progress-bar#getvalue) | Gets value of the progress bar |
+
+### SetValue
+
+Sets value of the progress bar
+
+> Returns the [`ProgressBar`](progress-bar) (self)
+
+```lua
+progressBar:SetValue(50)
+```
+
+| Type | Parameter | Default Value | Description |
+| :--- | :--- | :--- | :--- |
+| `number` | **`value`** |  | The new value |
+
+### GetValue
+
+Gets value of the progress bar
+
+> Returns a `number`
+
+```lua
+local value = progressBar:GetValue()
+```
