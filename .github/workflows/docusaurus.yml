@@ -1,0 +1,19 @@
+name: docs
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  gh-release:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          user_name: nanosbot
+          user_email: nanosbot-github@nanos.io
