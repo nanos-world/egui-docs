@@ -9,7 +9,7 @@ const config = {
   title: 'EGUI Documentation',
   tagline: 'EGUI Documentation',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/egui-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
